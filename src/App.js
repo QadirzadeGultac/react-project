@@ -9,6 +9,7 @@ function App() {
   const [listMovieName, setListMovieName] = useState([]);
 
   return (
+    <div>
       <Routes>
         <Route 
           path='/' 
@@ -36,6 +37,7 @@ function App() {
           } 
         />
       </Routes>
+      </div>
   );
 }
 
