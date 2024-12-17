@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Movie from './Components/Movie';
+import Favorite from './Components/Favorite';
+import { useState } from 'react';
 function App() {
+  const [listName, setListName] = useState(""); 
+  const [imbd, setImbd] = useState([]);
+  const [listMovieName, setListMovieName] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path='/' element={<Movie listName={listName} setListName={setListName} movieName={listMovieName} setMovieName={setListMovieName} imbdLink={imbd} setImbdLink={setImbd}/>} />
+        <Route path='/favorite' element={<Favorite favorites={listName} movieNames={listMovieName} movieNameDelet={setListMovieName} imbdLinkDelete={setImbd} imbdlink={imbd}/>} />
+      </Routes>
   );
 }
 
