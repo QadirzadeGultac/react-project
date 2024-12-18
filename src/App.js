@@ -15,4 +15,3 @@ function App() {
 }
 
 export default App;
-// https://github.com/QadirzadeGultac/react-project.git
